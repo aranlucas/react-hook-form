@@ -43,7 +43,7 @@
     "test:type": "tsd src/__typetest__",
     "e2e": "cypress run",
     "e2e:watch": "cypress open",
-    "api-extractor": "api-extractor run --local",
+    "api-extractor": "api-extractor run --local && api-documenter markdown --input-folder temp --output-folder markdown",
     "api-extractor:build": "pnpm build:esm && pnpm api-extractor",
     "api-extractor:ci": "node scripts/apiExtractor.js",
     "postversion": "git push && git push origin v$npm_package_version",
@@ -69,6 +69,7 @@
   "author": "<bluebill1049@hotmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@microsoft/api-documenter": "^7.22.21",
     "@microsoft/api-extractor": "^7.35.2",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^14.1.0",
